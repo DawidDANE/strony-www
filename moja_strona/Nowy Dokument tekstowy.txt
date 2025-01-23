@@ -1,0 +1,1 @@
+http://localhost/moja_strona/strona_głowna.php
