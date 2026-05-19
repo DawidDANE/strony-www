@@ -1,0 +1,59 @@
+METODA PAWŁOWSKIEGO
+======================================================================
+
+Wybrane zmienne:
+- Research Quality
+- Research Environment
+
+MODEL REGRESJI
+======================================================================
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:          Overall Score   R-squared:                       0.348
+Model:                            OLS   Adj. R-squared:                  0.340
+Method:                 Least Squares   F-statistic:                     45.39
+Date:                Sun, 10 May 2026   Prob (F-statistic):           1.61e-16
+Time:                        12:27:57   Log-Likelihood:                -217.62
+No. Observations:                 173   AIC:                             441.2
+Df Residuals:                     170   BIC:                             450.7
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+========================================================================================
+                           coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------
+const                   14.3889      0.417     34.495      0.000      13.565      15.212
+Research Quality         0.0943      0.011      8.324      0.000       0.072       0.117
+Research Environment     0.1716      0.028      6.027      0.000       0.115       0.228
+==============================================================================
+Omnibus:                        4.705   Durbin-Watson:                   0.810
+Prob(Omnibus):                  0.095   Jarque-Bera (JB):                2.876
+Skew:                           0.098   Prob(JB):                        0.237
+Kurtosis:                       2.400   Cond. No.                         147.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+RÓWNANIE REGRESJI:
+Y = 14.3889 + (0.0943)*Research Quality + (0.1716)*Research Environment
+
+R^2 = 0.3481
+
+Model wyjaśnia 34.81% zmienności Overall Score.
+
+
+10 NAJLEPSZYCH PROGNOZ
+======================================================================
+
+                                                Name  Rzeczywiste  Prognozowane
+15                              Kirikkale University      19.6840     19.657256
+21                                Kocaeli University      18.9180     18.858212
+2      Perm National Research Polytechnic University      18.0575     18.132585
+17                                 Ionian University      18.7395     18.821514
+28               Burdur Mehmet Akif Ersoy University      19.4895     19.314205
+27                      Çankırı Karatekin University      19.4445     19.652639
+20                                Başkent University      17.9745     18.194880
+26  Kazan National Research Technological University      16.7990     17.032424
+11                  Rzeszów University of Technology      18.2760     18.001106
+9                             University of Kelaniya      17.6965     17.999623

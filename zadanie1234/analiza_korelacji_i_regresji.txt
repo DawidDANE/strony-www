@@ -1,0 +1,43 @@
+=== KORELACJA ===
+=== KORELACJA ===
+Research Environment: r=0.2870, p=0.000129, slaba istotna
+Research Quality: r=0.4569, p=0.000000, umiarkowana istotna
+Industry Impact: r=0.1655, p=0.029522, slaba istotna
+
+=== MODEL REGRESJI ===
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:          Overall Score   R-squared:                       0.366
+Model:                            OLS   Adj. R-squared:                  0.355
+Method:                 Least Squares   F-statistic:                     32.52
+Date:                Sun, 17 May 2026   Prob (F-statistic):           1.20e-16
+Time:                        14:43:20   Log-Likelihood:                -215.21
+No. Observations:                 173   AIC:                             438.4
+Df Residuals:                     169   BIC:                             451.0
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+========================================================================================
+                           coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------
+const                   14.2247      0.419     33.921      0.000      13.397      15.053
+Research Environment     0.1434      0.031      4.630      0.000       0.082       0.205
+Research Quality         0.0985      0.011      8.666      0.000       0.076       0.121
+Industry Impact          0.0155      0.007      2.187      0.030       0.002       0.030
+==============================================================================
+Omnibus:                        2.779   Durbin-Watson:                   0.826
+Prob(Omnibus):                  0.249   Jarque-Bera (JB):                1.938
+Skew:                           0.016   Prob(JB):                        0.379
+Kurtosis:                       2.482   Cond. No.                         225.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+R²: 0.3660247204698458
+R² skorygowane: 0.3547707214249317
+
+=== RÓWNANIE MODELU ===
+Overall Score = 14.2247 + (0.1434 * Research Environment) + (0.0985 * Research Quality) + (0.0155 * Industry Impact) 
+
+=== PROGNOZA ===
+Prognozowany Overall Score: 33.95

@@ -1,0 +1,374 @@
+
+======================================================================
+ZADANIE 1 — WYBÓR DANYCH
+======================================================================
+
+Wybrano dane dotyczące rankingu uczelni wyższych.
+Zmienną objaśnianą jest Overall Score.
+
+======================================================================
+ZADANIE 2 — OPIS ZESTAWU DANYCH
+======================================================================
+
+PODGLĄD DANYCH
+
+   Overall Score  Teaching  ...  International Outlook  FTMRatio
+0        20.1405      14.6  ...                   34.9  1.439024
+1        20.0810      22.9  ...                   24.7  0.408451
+2        20.0405      20.6  ...                   39.3  0.785714
+3        19.9895      10.4  ...                   48.1  1.380952
+4        19.8625      14.5  ...                   47.2  0.923077
+
+[5 rows x 7 columns]
+
+INFORMACJE O DANYCH
+
+<class 'pandas.DataFrame'>
+RangeIndex: 173 entries, 0 to 172
+Data columns (total 7 columns):
+ #   Column                 Non-Null Count  Dtype  
+---  ------                 --------------  -----  
+ 0   Overall Score          173 non-null    float64
+ 1   Teaching               173 non-null    float64
+ 2   Research Environment   173 non-null    float64
+ 3   Research Quality       173 non-null    float64
+ 4   Industry Impact        173 non-null    float64
+ 5   International Outlook  173 non-null    float64
+ 6   FTMRatio               173 non-null    float64
+dtypes: float64(7)
+memory usage: 9.6 KB
+
+
+STATYSTYKI OPISOWE
+
+       Overall Score    Teaching  ...  International Outlook    FTMRatio
+count     173.000000  173.000000  ...             173.000000  173.000000
+mean       18.101908   18.954913  ...              33.195376    1.143048
+std         1.057400    4.467238  ...               8.877020    0.481723
+min        16.175000   10.400000  ...              18.500000    0.162791
+25%        17.187500   15.500000  ...              25.900000    0.785714
+50%        18.147000   18.200000  ...              32.100000    1.083333
+75%        18.923000   22.100000  ...              39.100000    1.500000
+max        20.140500   30.400000  ...              59.600000    2.571429
+
+[8 rows x 7 columns]
+
+======================================================================
+ZADANIE 3 — WSPÓŁCZYNNIKI ZMIENNOŚCI
+======================================================================
+Teaching: 23.57%
+Research Environment: 21.38%
+Research Quality: 30.13%
+Industry Impact: 41.06%
+International Outlook: 26.74%
+FTMRatio: 42.14%
+
+======================================================================
+ZADANIE 4 — CEL BADAWCZY
+======================================================================
+
+Celem badania jest analiza wpływu jakości nauczania,
+środowiska badawczego, jakości badań,
+wpływu przemysłowego oraz umiędzynarodowienia uczelni
+na końcowy wynik uczelni (Overall Score)
+oraz budowa modeli regresji służących
+do prognozowania wartości zmiennej objaśnianej.
+
+
+======================================================================
+ZADANIE 5 — REGRESJA WIELORAKA
+======================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:          Overall Score   R-squared:                       1.000
+Model:                            OLS   Adj. R-squared:                  1.000
+Method:                 Least Squares   F-statistic:                 2.047e+29
+Date:                Sun, 10 May 2026   Prob (F-statistic):               0.00
+Time:                        10:50:28   Log-Likelihood:                 5296.2
+No. Observations:                 173   AIC:                        -1.058e+04
+Df Residuals:                     166   BIC:                        -1.056e+04
+Df Model:                           6                                         
+Covariance Type:            nonrobust                                         
+=========================================================================================
+                            coef    std err          t      P>|t|      [0.025      0.975]
+-----------------------------------------------------------------------------------------
+const                   1.25e-14   1.73e-14      0.722      0.471   -2.17e-14    4.67e-14
+Teaching                  0.2950   3.53e-16   8.35e+14      0.000       0.295       0.295
+Research Environment      0.2900   4.97e-16   5.83e+14      0.000       0.290       0.290
+Research Quality          0.3000   2.84e-16   1.06e+15      0.000       0.300       0.300
+Industry Impact           0.0400   1.16e-16   3.44e+14      0.000       0.040       0.040
+International Outlook     0.0750   1.27e-16   5.93e+14      0.000       0.075       0.075
+FTMRatio               4.365e-16   2.18e-15      0.201      0.841   -3.86e-15    4.73e-15
+==============================================================================
+Omnibus:                        1.414   Durbin-Watson:                   0.164
+Prob(Omnibus):                  0.493   Jarque-Bera (JB):                1.506
+Skew:                          -0.195   Prob(JB):                        0.471
+Kurtosis:                       2.760   Cond. No.                         935.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+R^2 = 1.0000
+
+Interpretacja:
+Model wyjaśnia 100.00% zmienności Overall Score.
+
+
+PROGNOZA
+
+   Rzeczywiste  Prognozowane
+0      20.1405       20.1405
+1      20.0810       20.0810
+2      20.0405       20.0405
+3      19.9895       19.9895
+4      19.8625       19.8625
+5      19.8610       19.8610
+6      19.8055       19.8055
+7      19.7980       19.7980
+8      19.6845       19.6845
+9      19.6840       19.6840
+
+======================================================================
+ZADANIE 6 — METODA PAWŁOWSKIEGO
+======================================================================
+
+Wybrane zmienne:
+['Research Quality', 'Research Environment']
+
+MODEL REGRESJI
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:          Overall Score   R-squared:                       0.348
+Model:                            OLS   Adj. R-squared:                  0.340
+Method:                 Least Squares   F-statistic:                     45.39
+Date:                Sun, 10 May 2026   Prob (F-statistic):           1.61e-16
+Time:                        10:50:30   Log-Likelihood:                -217.62
+No. Observations:                 173   AIC:                             441.2
+Df Residuals:                     170   BIC:                             450.7
+Df Model:                           2                                         
+Covariance Type:            nonrobust                                         
+========================================================================================
+                           coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------
+const                   14.3889      0.417     34.495      0.000      13.565      15.212
+Research Quality         0.0943      0.011      8.324      0.000       0.072       0.117
+Research Environment     0.1716      0.028      6.027      0.000       0.115       0.228
+==============================================================================
+Omnibus:                        4.705   Durbin-Watson:                   0.810
+Prob(Omnibus):                  0.095   Jarque-Bera (JB):                2.876
+Skew:                           0.098   Prob(JB):                        0.237
+Kurtosis:                       2.400   Cond. No.                         147.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+R^2 = 0.3481
+
+======================================================================
+ZADANIE 7 — ANALIZA KORELACJI
+======================================================================
+
+Zmienna: Teaching
+Korelacja: -0.0417
+P-value: 0.586256
+
+Zmienna: Research Environment
+Korelacja: 0.2870
+P-value: 0.000129
+
+Zmienna: Research Quality
+Korelacja: 0.4569
+P-value: 0.000000
+
+Zmienna: Industry Impact
+Korelacja: 0.1655
+P-value: 0.029522
+
+Zmienna: International Outlook
+Korelacja: 0.0668
+P-value: 0.382761
+
+Zmienna: FTMRatio
+Korelacja: -0.0062
+P-value: 0.935720
+
+Wybrane zmienne:
+['Research Environment', 'Research Quality', 'Industry Impact']
+
+======================================================================
+ZADANIE 8 — REGRESJA DLA WYBRANYCH ZMIENNYCH
+======================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:          Overall Score   R-squared:                       0.366
+Model:                            OLS   Adj. R-squared:                  0.355
+Method:                 Least Squares   F-statistic:                     32.52
+Date:                Sun, 10 May 2026   Prob (F-statistic):           1.20e-16
+Time:                        10:50:31   Log-Likelihood:                -215.21
+No. Observations:                 173   AIC:                             438.4
+Df Residuals:                     169   BIC:                             451.0
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+========================================================================================
+                           coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------
+const                   14.2247      0.419     33.921      0.000      13.397      15.053
+Research Environment     0.1434      0.031      4.630      0.000       0.082       0.205
+Research Quality         0.0985      0.011      8.666      0.000       0.076       0.121
+Industry Impact          0.0155      0.007      2.187      0.030       0.002       0.030
+==============================================================================
+Omnibus:                        2.779   Durbin-Watson:                   0.826
+Prob(Omnibus):                  0.249   Jarque-Bera (JB):                1.938
+Skew:                           0.016   Prob(JB):                        0.379
+Kurtosis:                       2.482   Cond. No.                         225.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+R^2 = 0.3660
+
+Interpretacja:
+Model wyjaśnia 36.60% zmienności Overall Score.
+
+
+PROGNOZA
+
+   Rzeczywiste  Prognozowane
+0      20.1405     19.497528
+1      20.0810     18.636844
+2      20.0405     18.373760
+3      19.9895     19.108751
+4      19.8625     18.767260
+5      19.8610     18.639862
+6      19.8055     18.926861
+7      19.7980     19.368313
+8      19.6845     18.549403
+9      19.6840     19.575024
+
+======================================================================
+ZADANIE 9 — ANALIZA SZCZEGÓŁOWA
+======================================================================
+
+############################################################
+ZMIENNA: Research Quality
+############################################################
+
+9A — REGRESJA LINIOWA
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:          Overall Score   R-squared:                       0.209
+Model:                            OLS   Adj. R-squared:                  0.204
+Method:                 Least Squares   F-statistic:                     45.13
+Date:                Sun, 10 May 2026   Prob (F-statistic):           2.63e-10
+Time:                        10:50:33   Log-Likelihood:                -234.37
+No. Observations:                 173   AIC:                             472.7
+Df Residuals:                     171   BIC:                             479.1
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+====================================================================================
+                       coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------
+const               16.4983      0.249     66.191      0.000      16.006      16.990
+Research Quality     0.0823      0.012      6.718      0.000       0.058       0.106
+==============================================================================
+Omnibus:                       10.195   Durbin-Watson:                   0.433
+Prob(Omnibus):                  0.006   Jarque-Bera (JB):                4.871
+Skew:                           0.164   Prob(JB):                       0.0875
+Kurtosis:                       2.246   Cond. No.                         70.9
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+Korelacja Pearsona: 0.4569
+P-value: 0.000000
+
+9B + 9C — MODEL WIELOMIANOWY STOPNIA 2
+
+R^2 modelu wielomianowego = 0.2094
+
+9D — WYBÓR LEPSZEGO MODELU
+
+R^2 liniowy: 0.2088
+R^2 wielomianowy: 0.2094
+
+Lepszy model: WIELOMIANOWY
+
+############################################################
+ZMIENNA: Research Environment
+############################################################
+
+9A — REGRESJA LINIOWA
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:          Overall Score   R-squared:                       0.082
+Model:                            OLS   Adj. R-squared:                  0.077
+Method:                 Least Squares   F-statistic:                     15.35
+Date:                Sun, 10 May 2026   Prob (F-statistic):           0.000129
+Time:                        10:50:35   Log-Likelihood:                -247.20
+No. Observations:                 173   AIC:                             498.4
+Df Residuals:                     171   BIC:                             504.7
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+========================================================================================
+                           coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------
+const                   16.6825      0.370     45.029      0.000      15.951      17.414
+Research Environment     0.1299      0.033      3.917      0.000       0.064       0.195
+==============================================================================
+Omnibus:                       27.519   Durbin-Watson:                   0.160
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):                7.538
+Skew:                          -0.130   Prob(JB):                       0.0231
+Kurtosis:                       2.011   Cond. No.                         54.0
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+Korelacja Pearsona: 0.2870
+P-value: 0.000129
+
+9B + 9C — MODEL WIELOMIANOWY STOPNIA 2
+
+R^2 modelu wielomianowego = 0.0824
+
+9D — WYBÓR LEPSZEGO MODELU
+
+R^2 liniowy: 0.0824
+R^2 wielomianowy: 0.0824
+
+Lepszy model: WIELOMIANOWY
+
+======================================================================
+MACIERZ KORELACJI
+======================================================================
+                       Overall Score  Teaching  ...  International Outlook  FTMRatio
+Overall Score               1.000000 -0.041664  ...               0.066769 -0.006176
+Teaching                   -0.041664  1.000000  ...              -0.052606  0.066476
+Research Environment        0.286973 -0.157068  ...              -0.056570  0.015971
+Research Quality            0.456946 -0.689445  ...              -0.236453 -0.069954
+Industry Impact             0.165529 -0.013170  ...              -0.172034 -0.319881
+International Outlook       0.066769 -0.052606  ...               1.000000  0.225297
+FTMRatio                   -0.006176  0.066476  ...               0.225297  1.000000
+
+[7 rows x 7 columns]
+
+======================================================================
+WNIOSKI
+======================================================================
+
+1. Największy wpływ na wynik uczelni ma Research Quality.
+2. Istotny wpływ ma również Research Environment.
+3. Industry Impact ma słabszy wpływ na Overall Score.
+4. Modele regresji pozwalają prognozować Overall Score.
+5. Model wielomianowy nie poprawił znacząco wyników.
+
+======================================================================
+KONIEC PROJEKTU
+======================================================================

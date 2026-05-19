@@ -1,0 +1,63 @@
+MODEL REGRESJI WIELORAKIEJ
+======================================================================
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:          Overall Score   R-squared:                       0.707
+Model:                            OLS   Adj. R-squared:                  0.700
+Method:                 Least Squares   F-statistic:                     101.1
+Date:                Sun, 10 May 2026   Prob (F-statistic):           1.14e-43
+Time:                        12:00:27   Log-Likelihood:                -148.58
+No. Observations:                 173   AIC:                             307.2
+Df Residuals:                     168   BIC:                             322.9
+Df Model:                           4                                         
+Covariance Type:            nonrobust                                         
+========================================================================================
+                           coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------
+const                    6.6809      0.611     10.927      0.000       5.474       7.888
+Research Environment     0.2460      0.022     10.995      0.000       0.202       0.290
+Research Quality         0.2173      0.012     18.874      0.000       0.195       0.240
+Industry Impact          0.0220      0.005      4.512      0.000       0.012       0.032
+Teaching                 0.2081      0.015     13.962      0.000       0.179       0.237
+==============================================================================
+Omnibus:                        6.528   Durbin-Watson:                   1.374
+Prob(Omnibus):                  0.038   Jarque-Bera (JB):                6.671
+Skew:                           0.455   Prob(JB):                       0.0356
+Kurtosis:                       2.687   Cond. No.                         543.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+R^2 = 0.7065
+
+Model wyjaśnia 70.65% zmienności Overall Score.
+
+10 NAJLEPSZYCH PROGNOZ
+======================================================================
+
+                                                 Name  ...   Roznica
+114            Novosibirsk State Technical University  ...  0.011996
+108                            University of Kelaniya  ...  0.034155
+19                       Çankırı Karatekin University  ...  0.038310
+16                Burdur Mehmet Akif Ersoy University  ...  0.102736
+45                                 Kocaeli University  ...  0.131618
+139                  Polytechnic Institute of Setúbal  ...  0.145917
+143  Kazan National Research Technological University  ...  0.181276
+124                 North-Caucasus Federal University  ...  0.185976
+60       Gheorghe Asachi Technical University of Iaşi  ...  0.233696
+82                   Rzeszów University of Technology  ...  0.238730
+
+[10 rows x 4 columns]
+
+UŻYTE KOLUMNY:
+
+Zmienna objaśniana:
+- Overall Score
+
+Zmienne objaśniające:
+- Research Environment
+- Research Quality
+- Industry Impact
+- Teaching

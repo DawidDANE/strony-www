@@ -1,0 +1,48 @@
+
+Zmienna: Student Population
+Korelacja: -0.1370
+P-value: 0.072274499751214
+NIEISTOTNA STATYSTYCZNIE
+
+
+Zmienna: Students to Staff Ratio
+Korelacja: 0.0441
+P-value: 0.564823142345492
+NIEISTOTNA STATYSTYCZNIE
+
+
+Zmienna: International Outlook
+Korelacja: 0.0668
+P-value: 0.382760717983666
+NIEISTOTNA STATYSTYCZNIE
+
+
+Zmienna: Teaching
+Korelacja: -0.0417
+P-value: 0.586255668317182
+NIEISTOTNA STATYSTYCZNIE
+
+
+Zmienna: Research Environment
+Korelacja: 0.2870
+P-value: 0.000129180014697
+ISTOTNA STATYSTYCZNIE
+
+
+Zmienna: Research Quality
+Korelacja: 0.4569
+P-value: 0.000000000262668
+ISTOTNA STATYSTYCZNIE
+
+
+Zmienna: Industry Impact
+Korelacja: 0.1655
+P-value: 0.029521911167246
+ISTOTNA STATYSTYCZNIE
+
+
+Zmienna: International Outlook
+Korelacja: 0.0668
+P-value: 0.382760717983666
+NIEISTOTNA STATYSTYCZNIE
+

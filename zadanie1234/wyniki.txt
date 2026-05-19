@@ -1,0 +1,11 @@
+R2 liniowy: 0.3480851799367073
+R2 logarytmiczny: 0.3321971598961323
+R2 wielomianowy: 0.3555332255271769
+Najlepszy model: wielomianowy
+
+PROGNOZA:
+Kirikkale University -> 61.98293898267029
+Kocaeli University -> 56.52950928672374
+Perm Polytechnic -> 52.59324240197314
+Ionian University -> 50.882985880337046
+Burdur University -> 66.83982567747422

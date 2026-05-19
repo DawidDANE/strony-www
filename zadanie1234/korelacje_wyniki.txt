@@ -1,0 +1,360 @@
+======================================================================
+ZADANIE 1 — WYBÓR DANYCH
+======================================================================
+
+Analiza danych rankingów uczelni.
+
+Zmienna objaśniana:
+Y = Overall Score
+
+Zmienne objaśniające:
+X1 = Research Environment
+X2 = Research Quality
+X3 = Industry Impact
+X4 = Teaching
+
+
+
+======================================================================
+ZADANIE 2 — OPIS DANYCH
+======================================================================
+
+PODGLĄD DANYCH:
+   Rank                           Name  ... Ranking  Student Population.1
+0  1898     Soochow University, Taiwan  ...    1898                15,287
+1  1899  Technical University of Sofia  ...    1899                10,396
+2  1900        Universiti Kuala Lumpur  ...    1900                17,749
+3  1901       The University of Danang  ...    1901                60,839
+4  1902    University of Dar es Salaam  ...    1902                38,201
+
+[5 rows x 16 columns]
+
+INFO O DANYCH:
+<class 'pandas.DataFrame'>
+RangeIndex: 173 entries, 0 to 172
+Data columns (total 16 columns):
+ #   Column                   Non-Null Count  Dtype  
+---  ------                   --------------  -----  
+ 0   Rank                     173 non-null    int64  
+ 1   Name                     173 non-null    str    
+ 2   Country                  173 non-null    str    
+ 3   Female to male Ratio     173 non-null    int64  
+ 4   Overall Score            173 non-null    float64
+ 5   Teaching                 173 non-null    float64
+ 6   Research Environment     173 non-null    float64
+ 7   Research Quality         173 non-null    float64
+ 8   Industry Impact          173 non-null    float64
+ 9   International Outlook    173 non-null    float64
+ 10  Year                     173 non-null    int64  
+ 11  FTMRatio                 173 non-null    float64
+ 12  Student Population       173 non-null    str    
+ 13  Students to Staff Ratio  173 non-null    float64
+ 14  Ranking                  173 non-null    int64  
+ 15  Student Population.1     173 non-null    str    
+dtypes: float64(8), int64(4), str(4)
+memory usage: 21.8 KB
+
+
+STATYSTYKI OPISOWE:
+              Rank  Female to male Ratio  ...  Students to Staff Ratio      Ranking
+count   173.000000            173.000000  ...               173.000000   173.000000
+mean   1983.988439             50.878613  ...                19.869364  1983.988439
+std      50.079122             11.387583  ...                11.581332    50.079122
+min    1898.000000             14.000000  ...                 1.900000  1898.000000
+25%    1941.000000             44.000000  ...                12.800000  1941.000000
+50%    1984.000000             52.000000  ...                18.000000  1984.000000
+75%    2027.000000             60.000000  ...                23.600000  2027.000000
+max    2070.000000             72.000000  ...               115.100000  2070.000000
+
+[8 rows x 12 columns]
+
+
+======================================================================
+ZADANIE 3 — WSPÓŁCZYNNIKI ZMIENNOŚCI
+======================================================================
+Research Environment: 21.38%
+Research Quality: 30.13%
+Industry Impact: 41.06%
+Teaching: 23.57%
+
+
+======================================================================
+ZADANIE 4 — CEL BADANIA
+======================================================================
+
+Celem badania jest analiza wpływu:
+
+- środowiska badawczego,
+- jakości badań,
+- wpływu przemysłowego,
+- jakości nauczania
+
+na końcowy wynik uczelni
+(Overall Score).
+
+Dodatkowo budowane są modele regresji
+opisujące zależności pomiędzy zmiennymi.
+
+
+
+======================================================================
+ZADANIE 5 — REGRESJA WIELORAKA
+======================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:          Overall Score   R-squared:                       0.707
+Model:                            OLS   Adj. R-squared:                  0.700
+Method:                 Least Squares   F-statistic:                     101.1
+Date:                Sun, 10 May 2026   Prob (F-statistic):           1.14e-43
+Time:                        12:20:06   Log-Likelihood:                -148.58
+No. Observations:                 173   AIC:                             307.2
+Df Residuals:                     168   BIC:                             322.9
+Df Model:                           4                                         
+Covariance Type:            nonrobust                                         
+========================================================================================
+                           coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------
+const                    6.6809      0.611     10.927      0.000       5.474       7.888
+Research Environment     0.2460      0.022     10.995      0.000       0.202       0.290
+Research Quality         0.2173      0.012     18.874      0.000       0.195       0.240
+Industry Impact          0.0220      0.005      4.512      0.000       0.012       0.032
+Teaching                 0.2081      0.015     13.962      0.000       0.179       0.237
+==============================================================================
+Omnibus:                        6.528   Durbin-Watson:                   1.374
+Prob(Omnibus):                  0.038   Jarque-Bera (JB):                6.671
+Skew:                           0.455   Prob(JB):                       0.0356
+Kurtosis:                       2.687   Cond. No.                         543.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+R^2 = 0.706537
+
+PROGNOZA:
+   Rzeczywiste  Prognozowane
+0      16.4945     17.537909
+1      18.9435     17.876358
+2      18.0575     18.576399
+3      18.6530     18.419304
+4      17.5250     17.513004
+5      17.0065     17.641883
+6      18.9580     18.521061
+7      19.5290     18.865156
+8      17.5900     17.906173
+9      17.6965     17.730655
+
+
+======================================================================
+ZADANIE 6 — METODA PAWŁOWSKIEGO
+======================================================================
+
+Siła korelacji zmiennych:
+Research Environment: 0.286973
+Research Quality: 0.456946
+Industry Impact: 0.165529
+Teaching: 0.041664
+
+Uszeregowanie zmiennych:
+['Research Quality', 'Research Environment', 'Industry Impact', 'Teaching']
+
+
+======================================================================
+ZADANIE 7 — ANALIZA KORELACJI
+======================================================================
+
+------------------------------------------------------------
+Zmienna: Research Environment
+Korelacja Pearsona: 0.286973
+P-value: 0.000129180014697
+Wniosek: korelacja ISTOTNA statystycznie
+
+------------------------------------------------------------
+Zmienna: Research Quality
+Korelacja Pearsona: 0.456946
+P-value: 0.000000000262668
+Wniosek: korelacja ISTOTNA statystycznie
+
+------------------------------------------------------------
+Zmienna: Industry Impact
+Korelacja Pearsona: 0.165529
+P-value: 0.029521911167246
+Wniosek: korelacja ISTOTNA statystycznie
+
+
+======================================================================
+ISTOTNE ZMIENNE
+======================================================================
+Research Environment
+Research Quality
+Industry Impact
+
+
+======================================================================
+ZADANIE 8 — REGRESJA DLA ISTOTNYCH ZMIENNYCH
+======================================================================
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:          Overall Score   R-squared:                       0.366
+Model:                            OLS   Adj. R-squared:                  0.355
+Method:                 Least Squares   F-statistic:                     32.52
+Date:                Sun, 10 May 2026   Prob (F-statistic):           1.20e-16
+Time:                        12:20:07   Log-Likelihood:                -215.21
+No. Observations:                 173   AIC:                             438.4
+Df Residuals:                     169   BIC:                             451.0
+Df Model:                           3                                         
+Covariance Type:            nonrobust                                         
+========================================================================================
+                           coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------
+const                   14.2247      0.419     33.921      0.000      13.397      15.053
+Research Environment     0.1434      0.031      4.630      0.000       0.082       0.205
+Research Quality         0.0985      0.011      8.666      0.000       0.076       0.121
+Industry Impact          0.0155      0.007      2.187      0.030       0.002       0.030
+==============================================================================
+Omnibus:                        2.779   Durbin-Watson:                   0.826
+Prob(Omnibus):                  0.249   Jarque-Bera (JB):                1.938
+Skew:                           0.016   Prob(JB):                        0.379
+Kurtosis:                       2.482   Cond. No.                         225.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+
+======================================================================
+ZADANIE 9 — ANALIZA SZCZEGÓŁOWA
+======================================================================
+
+
+############################################################
+ZMIENNA: Research Quality
+############################################################
+
+REGRESJA LINIOWA
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:          Overall Score   R-squared:                       0.209
+Model:                            OLS   Adj. R-squared:                  0.204
+Method:                 Least Squares   F-statistic:                     45.13
+Date:                Sun, 10 May 2026   Prob (F-statistic):           2.63e-10
+Time:                        12:20:07   Log-Likelihood:                -234.37
+No. Observations:                 173   AIC:                             472.7
+Df Residuals:                     171   BIC:                             479.1
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+====================================================================================
+                       coef    std err          t      P>|t|      [0.025      0.975]
+------------------------------------------------------------------------------------
+const               16.4983      0.249     66.191      0.000      16.006      16.990
+Research Quality     0.0823      0.012      6.718      0.000       0.058       0.106
+==============================================================================
+Omnibus:                       10.195   Durbin-Watson:                   0.433
+Prob(Omnibus):                  0.006   Jarque-Bera (JB):                4.871
+Skew:                           0.164   Prob(JB):                       0.0875
+Kurtosis:                       2.246   Cond. No.                         70.9
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+Korelacja: 0.456946
+P-value: 0.000000000262668
+
+REGRESJA WIELOMIANOWA STOPNIA 2
+R^2 wielomianowy = 0.209390
+
+PORÓWNANIE MODELI
+R^2 liniowy = 0.208799
+R^2 wielomianowy = 0.209390
+Lepszy model: WIELOMIANOWY
+
+
+############################################################
+ZMIENNA: Research Environment
+############################################################
+
+REGRESJA LINIOWA
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:          Overall Score   R-squared:                       0.082
+Model:                            OLS   Adj. R-squared:                  0.077
+Method:                 Least Squares   F-statistic:                     15.35
+Date:                Sun, 10 May 2026   Prob (F-statistic):           0.000129
+Time:                        12:20:07   Log-Likelihood:                -247.20
+No. Observations:                 173   AIC:                             498.4
+Df Residuals:                     171   BIC:                             504.7
+Df Model:                           1                                         
+Covariance Type:            nonrobust                                         
+========================================================================================
+                           coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------
+const                   16.6825      0.370     45.029      0.000      15.951      17.414
+Research Environment     0.1299      0.033      3.917      0.000       0.064       0.195
+==============================================================================
+Omnibus:                       27.519   Durbin-Watson:                   0.160
+Prob(Omnibus):                  0.000   Jarque-Bera (JB):                7.538
+Skew:                          -0.130   Prob(JB):                       0.0231
+Kurtosis:                       2.011   Cond. No.                         54.0
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+Korelacja: 0.286973
+P-value: 0.000129180014697
+
+REGRESJA WIELOMIANOWA STOPNIA 2
+R^2 wielomianowy = 0.082355
+
+PORÓWNANIE MODELI
+R^2 liniowy = 0.082354
+R^2 wielomianowy = 0.082355
+Lepszy model: WIELOMIANOWY
+
+
+======================================================================
+STATYSTYKI DLA ISTOTNYCH ZMIENNYCH
+======================================================================
+
+------------------------------------------------------------
+Zmienna: Research Environment
+Średnia: 10.928324
+Odchylenie standardowe: 2.336230
+Współczynnik zmienności: 21.38%
+
+------------------------------------------------------------
+Zmienna: Research Quality
+Średnia: 19.496532
+Odchylenie standardowe: 5.874441
+Współczynnik zmienności: 30.13%
+
+------------------------------------------------------------
+Zmienna: Industry Impact
+Średnia: 25.059538
+Odchylenie standardowe: 10.290670
+Współczynnik zmienności: 41.06%
+
+
+======================================================================
+WNIOSKI
+======================================================================
+
+1. Zmienną objaśnianą był Overall Score.
+
+2. Analizowano wpływ:
+   - Research Environment,
+   - Research Quality,
+   - Industry Impact,
+   - Teaching.
+
+3. Dla każdej zmiennej obliczono:
+   - korelację Pearsona,
+   - p-value,
+   - istotność statystyczną.
+
+4. Najsilniejszą zależność z Overall Score
+   wykazała zmienna Research Quality.
+
+5. Model regresji liniowej dobrze opisuje dane.
+

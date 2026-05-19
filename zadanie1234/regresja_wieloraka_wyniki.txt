@@ -1,0 +1,48 @@
+MODEL REGRESJI WIELORAKIEJ
+======================================================================
+
+                            OLS Regression Results                            
+==============================================================================
+Dep. Variable:          Overall Score   R-squared:                       0.718
+Model:                            OLS   Adj. R-squared:                  0.709
+Method:                 Least Squares   F-statistic:                     84.57
+Date:                Sun, 10 May 2026   Prob (F-statistic):           1.41e-35
+Time:                        11:52:34   Log-Likelihood:                -116.99
+No. Observations:                 138   AIC:                             244.0
+Df Residuals:                     133   BIC:                             258.6
+Df Model:                           4                                         
+Covariance Type:            nonrobust                                         
+========================================================================================
+                           coef    std err          t      P>|t|      [0.025      0.975]
+----------------------------------------------------------------------------------------
+const                    6.7003      0.679      9.869      0.000       5.357       8.043
+Research Environment     0.2496      0.027      9.129      0.000       0.195       0.304
+Research Quality         0.2128      0.013     17.016      0.000       0.188       0.238
+Industry Impact          0.0249      0.006      4.515      0.000       0.014       0.036
+Teaching                 0.2063      0.016     12.527      0.000       0.174       0.239
+==============================================================================
+Omnibus:                        4.048   Durbin-Watson:                   2.039
+Prob(Omnibus):                  0.132   Jarque-Bera (JB):                4.100
+Skew:                           0.398   Prob(JB):                        0.129
+Kurtosis:                       2.720   Cond. No.                         536.
+==============================================================================
+
+Notes:
+[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.
+
+R^2 = 0.7178
+
+Model wyjaśnia 71.78% zmienności Overall Score.
+
+PRZYKŁADOWE PROGNOZY:
+   Rzeczywiste  Prognozowane
+0      16.4945     17.537909
+1      18.9435     17.876358
+2      18.0575     18.576399
+3      18.6530     18.419304
+4      17.5250     17.513004
+5      17.0065     17.641883
+6      18.9580     18.521061
+7      19.5290     18.865156
+8      17.5900     17.906173
+9      17.6965     17.730655

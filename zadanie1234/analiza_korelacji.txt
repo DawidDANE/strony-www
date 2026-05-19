@@ -1,0 +1,30 @@
+ANALIZA WSPÓŁCZYNNIKÓW KORELACJI
+======================================================================
+
+----------------------------------------------------------------------
+Zmienna: Research Environment
+Korelacja Pearsona: 0.286973
+P-value: 0.000129180014697
+Wniosek: ISTOTNA statystycznie (slaba korelacja)
+
+----------------------------------------------------------------------
+Zmienna: Research Quality
+Korelacja Pearsona: 0.456946
+P-value: 0.000000000262668
+Wniosek: ISTOTNA statystycznie (umiarkowana korelacja)
+
+----------------------------------------------------------------------
+Zmienna: Industry Impact
+Korelacja Pearsona: 0.165529
+P-value: 0.029521911167246
+Wniosek: ISTOTNA statystycznie (slaba korelacja)
+
+WYBRANE ZMIENNE
+======================================================================
+Research Environment
+Research Quality
+Industry Impact
+
+INTERPRETACJA
+======================================================================
+Do dalszej analizy wybrano zmienne istotne statystycznie (p-value < 0.05). Zmienne te wykazują największy wpływ na Overall Score.

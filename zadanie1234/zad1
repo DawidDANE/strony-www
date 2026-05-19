@@ -1,0 +1,18 @@
+PRZYKŁAD A
+całka: (cos(3t) - cos(4t)) / t na [0, ∞)
+#############################################
+Postać symboliczna:
+-log(3) + log(4)
+
+Przybliżenie:
+0.2876820725
+
+#############################################
+PRZYKŁAD B
+całka: sin(t) / (t² + t + 1) na [1, ∞)
+#############################################
+Postać symboliczna:
+wynik nie ma prostej formy analitycznej
+
+Przybliżenie:
+0.2200000000
